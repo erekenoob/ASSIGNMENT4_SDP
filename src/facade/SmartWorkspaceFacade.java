@@ -52,5 +52,15 @@ public class SmartWorkspaceFacade {
         }
     }
 
-
+    public void endWorkSession() {
+        System.out.println("FACADE :     Deactivating Workspace ");
+        spotify.pause();
+        spotify.disconnect();
+        pc.sleep();
+        coffeeMachine.powerOff();
+        lighting.disableAmbientLight();
+        lighting.turnOnMainLight();
+        curtains.open();
+        System.out.println("FACADE:     Workspace session closed.\n");
+    }
 }
